@@ -1,10 +1,18 @@
-import { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Detail from "./routes/Detail";
+import Home from "./routes/Home";
 
-import Movie from "./components/Movie";
-
-function App() {
-  return null;
-} //App.js는 router를 render함
+//App.js는 router를 render함
 //router는 URL을 보고있는 component
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path={"/movie/:id"} element={<Detail />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default App;
